@@ -1,0 +1,20 @@
+{
+  "name": "wireless-printing",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "firebase": "^4.8.0",
+    "firebase-admin": "^5.5.1",
+    "json": "^9.0.6",
+    "request": "^2.83.0",
+    "xmlhttprequest": "^1.8.0"
+  }
+}

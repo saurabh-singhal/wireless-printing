@@ -18,6 +18,12 @@ var admin = require('firebase-admin');
 var serviceAccount = require("./serviceAccountKey.json");
 firebase.initializeApp(serviceAccount);
 
+admin.initializeApp(
+  {
+  credential: admin.credential.cert(serviceAccount),
+  databaseURL: "https://major-project-bcca5.firebaseio.com"
+  });
+
 // Running Server Details.
 var server = app.listen(port, function () {
   var host = server.address().address
@@ -81,12 +87,6 @@ app.post('/sign_up', urlencodedParser, function (req, res)
 });
   res.send(reply);
 
-  admin.initializeApp(
-    {
-    credential: admin.credential.cert(serviceAccount),
-    databaseURL: "https://major-project-bcca5.firebaseio.com"
-    });
-
  });
 
  app.post('/sign_in', urlencodedParser, function (req, res)
@@ -134,10 +134,5 @@ app.post('/sign_up', urlencodedParser, function (req, res)
          });
      }
 });
-
-   admin.initializeApp({
-     credential: admin.credential.cert(serviceAccount),
-     databaseURL: "https://major-project-bcca5.firebaseio.com"
-   });
 
   });

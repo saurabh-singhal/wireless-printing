@@ -25,14 +25,30 @@ var server = app.listen(port, function () {
   console.log("Example app listening at %s:%s Port", host, port)
 });
 
+app.get('/',function(req,res){
+  var html='';
+  html+="<html>";
+  html+="<body>";
+  html+="<form action='/signup'>";
+  html+="<input type='submit' value='Sign Up'>";
+  html+="</form>";
+  html+="<form action='/signin'>";
+  html+="<input type='submit' value='Sign In'>";
+  html+="</form>";
+  html+="</body>";
+  html+="</html>";
+
+  res.send(html);
+});
+
 
 app.get('/signup', function (req, res)
 {
   var html='';
   html +="<body>";
   html += "<form action='/sign_up'  method='post' name='form1'>";
-  html += "EMAIL:</p><input type='text' name='email'>";
-  html += "PASSWORD:</p><input type='password' name='password'>";
+  html += "EMAIL:<input type='text' name='email'>";
+  html += "PASSWORD:<input type='password' name='password'>";
   html += "<INPUT type='submit' value='submit'>";
   html += "<INPUT type='reset'  value='reset'>";
   html += "</form>";
